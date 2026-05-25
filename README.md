@@ -1,7 +1,4 @@
-# Minecraft好人服 1.21.1 官网（最终版实现）
-
-## 项目介绍
-这是一个面向 Minecraft 工程科技玩家的现代化门户站，主题围绕 Create 机械工程、多人协作工厂与 seL4/CAmkES 底层技术路线实验。
+Minecraft好人服务器 1.21.1 官方网站
 
 ## 技术栈
 - Next.js App Router + TypeScript
@@ -53,24 +50,3 @@ npm run build
 - 检查低配模式开关与 reduced-motion 降级是否生效。
 - 若接入真实状态 API，验证接口超时回退与兜底文案是否可用。
 - 执行 `npm run build` 并检查静态导出产物。
-
-## seL4 文案准确性说明
-**本网站展示的 seL4 是服务器项目的底层安全基础设施实验与后续迁移路线；当前生产 Minecraft 服务端以稳定运行为优先。**
-
-## 安全
-支持PQC部署
-
-PQC检查清单：`docs/pqc-release-checklist.md`
-
-
-## 壁纸放置位置
-如果后续需要启用自定义壁纸，请将文件放到：`public/images/hero-wallpaper.png`（桌面）和 `public/images/hero-wallpaper-mobile.jpg`（移动端），再在 `src/app/globals.css` 的 `body` 背景中引用。
-
-
-## 手机端适配说明
-- 头部导航已适配小屏换行与触控点击。
-- Hero 按钮区域在手机端改为纵向栅格，提升可点按性。
-- 时间线与信息卡片在小屏优化了字号/留白。
-
-## 手机端背景目录
-手机端背景图片目录：`public/images/mobile/`
