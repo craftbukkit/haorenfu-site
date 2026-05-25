@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: #e6edf3;
+  background: linear-gradient(180deg, rgba(5, 7, 10, 0.96), rgba(9, 14, 18, 0.92));
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(9, 14, 18, 0.7), rgba(9, 14, 18, 0.45));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(74, 168, 255, 0.22);
+}
+
+.hud-border { box-shadow: 0 0 0 1px rgba(71,214,180,.12) inset, 0 0 25px rgba(74,168,255,.09); }
+
+.gear {
+  position: absolute;
+  border: 2px dashed rgba(214, 168, 92, 0.35);
+  border-radius: 999px;
+  animation: spin 28s linear infinite;
+}
+.g1 { width: 280px; height: 280px; left: 8%; top: 24%; }
+.g2 { width: 420px; height: 420px; right: -8%; top: 10%; animation-direction: reverse; }
+
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .gear,
+  .particle-field { animation: none; }
+}
+
+.particle-field {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(71, 214, 180, 0.18) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 80%);
+  animation: drift 22s linear infinite;
+}
+
+@keyframes drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(24px); }
+}
+
