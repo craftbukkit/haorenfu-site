@@ -1,7 +1,7 @@
-# Minecraft好人服 1.21.1 官网（最终版实现）
+# Minecraft好人服 1.21.1 官网
 
 ## 项目介绍
-这是一个面向 Minecraft 工程科技玩家的现代化门户站，主题围绕 Create 机械工程、多人协作工厂与 seL4/CAmkES 底层技术路线实验。
+这是一个面向 Minecraft 工程科技玩家的现代化门户站，主题围绕 Create 机械工程、多人协作工厂。
 
 ## 技术栈
 - Next.js App Router + TypeScript
