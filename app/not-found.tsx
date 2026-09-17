@@ -1,0 +1,1 @@
+import Link from"next/link";export default function NotFound(){return <main id="main-content" className="not-found"><div><strong>404</strong><h1>这条轨道还没有铺到这里。</h1><p>页面可能被移动、尚未公开，或者地址输入有误。</p><Link className="primary-button" href="/">返回首页</Link></div></main>}

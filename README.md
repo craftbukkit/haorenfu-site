@@ -1,64 +1,42 @@
-# Minecraft好人服 1.21.1 官网 owo
+# Minecraft 好人服务器官网 / Haorenfu Universe
 
-## 项目介绍
-这是一个面向 Minecraft 工程科技玩家的现代化门户站，主题围绕 Create 机械工程、多人协作工厂。
+Minecraft 好人服务器（Haorenfu Universe）公开官网源码。服务器始于 2013 年 5 月；本仓库整理自 2026-09-04 的官网开发基线，并在公开前移除了生产环境部署拓扑、内部托管标识和凭据相关内容。
 
-## 技术栈
-- Next.js App Router + TypeScript
-- Tailwind CSS
-- Motion for React（framer-motion）
-- lucide-react
-- 静态导出部署（Nginx/Vercel/Cloudflare Pages）
+## 内容
+
+- 首页与八条玩法路线
+- 56 项可审计模组/组件百科
+- 客户端加入与版本边界说明
+- 社区、历史、规则、隐私、安全与状态页面
+- Minecraft Java 1.21.1 / NeoForge 21.1.248 基线资料
 
 ## 本地运行
+
+需要 Node.js 22 或更新版本。
+
 ```bash
 npm install
 npm run dev
 ```
 
-## 构建
+生产静态导出：
+
 ```bash
 npm run build
 ```
 
-## 部署
-- Nginx 静态托管：`npm run build` 后部署 `out/`
-- Vercel：直接连接仓库，自动构建
-- Cloudflare Pages：构建命令 `npm run build`，输出目录 `out`
+输出目录为 `out/`。
 
-## 修改服务器信息的位置
-集中在：`src/config/server.ts`
+## 开源边界
 
-## 如何替换下载链接
-编辑：
-- `clientZipUrl`
-- `resourcepackUrl`
+本仓库只公开网站应用本身。真实生产 `.env`、Token、密码、SSH 私钥、Tailscale/Zero-Trust 配置、云平台凭据、备份凭据、内部管理地址与生产部署拓扑均不应进入公开仓库。
 
-## 如何接入真实 Minecraft 状态 API
-当前使用 `/api/status` mock 数据。后续可在 `src/app/api/status/route.ts` 替换为：
-1. 服务端 ping/代理接口（加超时）；
-2. 缓存最近一次成功结果；
-3. 失败时回退静态兜底值。
+页面中的 Minecraft、模组和第三方项目名称及商标归各自权利人所有。此项目不是 Mojang Studios 官方产品。
 
-## Three.js / 重视觉性能开销建议
-- 低端设备降级到静态背景；
-- 减少粒子数量与复杂几何；
-- 限制 dpr；
-- 遵循 `prefers-reduced-motion`；
-- 对首屏效果做 progressive enhancement。
+## 历史版本
 
-## 上线前检查清单
-- 核验 `src/config/server.ts` 中服务器地址、QQ群、下载链接是否为最新。
-- 验证 `/download`、`/guide`、`/rules`、`/tech` 路由在移动端/桌面端展示正常。
-- 检查低配模式开关与 reduced-motion 降级是否生效。
-- 若接入真实状态 API，验证接口超时回退与兜底文案是否可用。
-- 执行 `npm run build` 并检查静态导出产物。
+2026-09-17 公开前的旧 GitHub 版本保存在 `archive/pre-2026-09-17` 分支。
 
-## 安全
-支持PQC部署
+## License
 
-PQC检查清单：`docs/pqc-release-checklist.md`
-
-
-## 壁纸放置位置
-如果后续需要启用自定义壁纸，请将文件放到：`public/images/hero-wallpaper.png`（桌面）和 `public/images/hero-wallpaper-mobile.jpg`（移动端），再在 `src/app/globals.css` 的 `body` 背景中引用。
+网站源代码以 MIT License 发布。第三方资产、商标和各 Minecraft 模组仍遵循各自许可证。
